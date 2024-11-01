@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UTS_MAUI.Pages.CategoryCatalogPage"
+             Title="Category Catalog">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="10">
+                <Label Text="Category Catalog" FontSize="24" HorizontalOptions="Center" Margin="10" />
+                <ListView x:Name="CategoryListView" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame Padding="10" Margin="5" BorderColor="LightGray" CornerRadius="8">
+                                    <StackLayout>
+                                        <Label Text="{Binding Name}" FontSize="20" FontAttributes="Bold" />
+                                        <Label Text="{Binding Description}" FontSize="14" TextColor="Gray" />
+                                    </StackLayout>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

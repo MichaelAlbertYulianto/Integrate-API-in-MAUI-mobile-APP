@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:Pages="clr-namespace:UTS_MAUI.Pages"
+       x:Class="UTS_MAUI.AppShell">
+
+    <!-- Flyout Menu -->
+    <FlyoutItem Title="Home" Icon="home_icon.png">
+        <ShellContent
+            Title="Home"
+            ContentTemplate="{DataTemplate Pages:CategoryCatalogPage}"
+            Route="MainPage" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Course Catalog" Icon="catalog_icon.png">
+        <ShellContent
+            Title="Course Catalog"
+            ContentTemplate="{DataTemplate Pages:CourseCatalogPages}"
+            Route="CourseCatalogPage" />
+    </FlyoutItem>
+
+</Shell>

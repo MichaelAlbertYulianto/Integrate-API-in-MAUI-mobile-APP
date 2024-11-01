@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UTS_MAUI.Pages.CoursesCatalogPage"
+             x:Name="CoursesCatalogPages"
+             Title="Course Catalog">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="10">
+                <Label Text="Courses Catalog" FontSize="24" HorizontalOptions="Center" Margin="10" />
+
+                <CollectionView x:Name="CoursesCollectionView" SelectionMode="Single">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame Padding="10" Margin="5" BorderColor="LightGray" CornerRadius="8">
+                                <StackLayout>
+                                    <!-- Course Image -->
+                                    <Image Source="{Binding ImageName}" HeightRequest="100" WidthRequest="100" Aspect="AspectFill"/>
+
+                                    <!-- Course Name and Duration -->
+                                    <Label Text="{Binding Name}" FontSize="20" FontAttributes="Bold" />
+                                    <Label Text="{Binding Duration}" FontSize="14" TextColor="Gray" />
+
+                                    <!-- Course Description -->
+                                    <Label Text="{Binding Description}" FontSize="14" TextColor="DarkGray" />
+
+                                    <!-- Category Name (Optional) -->
+                                    <Label Text="{Binding Category.Name}" FontSize="12" TextColor="DarkRed" 
+                                           IsVisible="{Binding Category, Converter={StaticResource NullToBoolConverter}}"/>
+                                </StackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
